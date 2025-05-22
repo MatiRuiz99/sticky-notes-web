@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StickyNotesAPI", "StickyNotesAPI\StickyNotesAPI.csproj", "{FB4A1941-E59D-423B-B1B9-6248CCC7D37A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{9113623B-9EAD-46A7-942C-33F8138EFBF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{5FAB8E7E-8100-45E1-BAB2-EEAC7B9FB45E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{FB4A1941-E59D-423B-B1B9-6248CCC7D37A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB4A1941-E59D-423B-B1B9-6248CCC7D37A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB4A1941-E59D-423B-B1B9-6248CCC7D37A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9113623B-9EAD-46A7-942C-33F8138EFBF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9113623B-9EAD-46A7-942C-33F8138EFBF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9113623B-9EAD-46A7-942C-33F8138EFBF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9113623B-9EAD-46A7-942C-33F8138EFBF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FAB8E7E-8100-45E1-BAB2-EEAC7B9FB45E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FAB8E7E-8100-45E1-BAB2-EEAC7B9FB45E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FAB8E7E-8100-45E1-BAB2-EEAC7B9FB45E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FAB8E7E-8100-45E1-BAB2-EEAC7B9FB45E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
