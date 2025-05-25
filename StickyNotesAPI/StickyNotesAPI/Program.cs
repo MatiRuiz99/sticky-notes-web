@@ -39,6 +39,7 @@ builder
     });
 
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("Connection");
