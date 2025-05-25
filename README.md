@@ -1,4 +1,4 @@
-#Sticky Notes Website
+# Sticky Notes Website
 
 This is a website to make simple notes that can be categorized by colors.
 
