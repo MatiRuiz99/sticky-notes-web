@@ -32,9 +32,9 @@ namespace Service.Services
                 .ToList();
         }
 
-        public ResponseDTO CreateNote(NoteDTO newNote)
+        public ResponseDTO CreateNote(NoteDTO note)
         {
-            bool categoryExists = _context.Categories.Any(c => c.Id == newNote.CategoryId);
+            bool categoryExists = _context.Categories.Any(c => c.Id == note.CategoryId);
             if (!categoryExists)
             {
                 return new ResponseDTO { Success = false, Message = "Category not found" };
@@ -43,9 +43,9 @@ namespace Service.Services
             _context.Notes.Add(
                 new Note
                 {
-                    Text = newNote.Text,
-                    CategoryId = newNote.CategoryId,
-                    UserId = newNote.UserId,
+                    Text = note.Text,
+                    CategoryId = note.CategoryId,
+                    UserId = note.UserId,
                 }
             );
 
@@ -54,21 +54,21 @@ namespace Service.Services
             return new ResponseDTO { Success = true, Message = "Note created successfully" };
         }
 
-        public ResponseDTO EditNote(NoteDTO editNote)
+        public ResponseDTO EditNote(NoteDTO note)
         {
-            Note? note = _context.Notes.FirstOrDefault(n => n.Id == editNote.Id);
-            if (note == null)
+            Note? storedNote = _context.Notes.FirstOrDefault(n => n.Id == note.Id);
+            if (storedNote == null)
             {
                 return new ResponseDTO { Success = false, Message = "Note not found" };
             }
-            bool categoryExists = _context.Categories.Any(c => c.Id == editNote.CategoryId);
+            bool categoryExists = _context.Categories.Any(c => c.Id == note.CategoryId);
             if (!categoryExists)
             {
                 return new ResponseDTO { Success = false, Message = "Category not found" };
             }
 
-            note.Text = editNote.Text;
-            note.CategoryId = editNote.CategoryId;
+            storedNote.Text = note.Text;
+            storedNote.CategoryId = note.CategoryId;
 
             _context.SaveChanges();
 

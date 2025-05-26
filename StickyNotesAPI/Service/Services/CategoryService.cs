@@ -78,10 +78,17 @@ namespace Service.Services
                 return new ResponseDTO { Success = false, Message = "Category not found" };
             }
 
+            var notes = _context.Notes.Where(n => n.CategoryId == id).ToList();
+            _context.Notes.RemoveRange(notes);
+
             _context.Categories.Remove(category);
             _context.SaveChanges();
 
-            return new ResponseDTO { Success = true, Message = "Category deleted successfully" };
+            return new ResponseDTO
+            {
+                Success = true,
+                Message = "Category and associated notes deleted successfully",
+            };
         }
     }
 }
