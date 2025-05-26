@@ -40,6 +40,7 @@ builder
 
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<INoteService, NoteService>();
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("Connection");
