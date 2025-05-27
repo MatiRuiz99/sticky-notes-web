@@ -43,8 +43,10 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<INoteService, NoteService>();
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("Connection");
-builder.Services.AddDbContext<AppDBContext>(options => options.UseSqlServer(connectionString));
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<AppDBContext>(options =>
+    options.UseMySql(connectionString, new MySqlServerVersion(new Version(8, 0, 33)))
+);
 builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
