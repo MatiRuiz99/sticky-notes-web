@@ -27,6 +27,7 @@ namespace Service.Services
                 {
                     Id = n.Id,
                     Text = n.Text,
+                    State = n.State,
                     CategoryId = n.CategoryId,
                 })
                 .ToList();
@@ -45,6 +46,7 @@ namespace Service.Services
                 {
                     Text = note.Text,
                     CategoryId = note.CategoryId,
+                    State = note.State,
                     UserId = note.UserId,
                 }
             );
