@@ -46,7 +46,7 @@ namespace Service.Services
                 {
                     Text = note.Text,
                     CategoryId = note.CategoryId,
-                    State = note.State,
+                    State = "Pending",
                     UserId = note.UserId,
                 }
             );

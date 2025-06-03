@@ -30,11 +30,18 @@ namespace Service.Services
                     Name = c.Name,
                     Color = c.Color,
                 })
+                .Take(16)
                 .ToList();
         }
 
         public ResponseDTO CreateCategory(CategoryDTO newcat)
         {
+            int categoryCount = _context.Categories.Count(c => c.UserId == newcat.UserId);
+            if (categoryCount >= 16)
+            {
+                return new ResponseDTO { Success = false, Message = "Category limit reached" };
+            }
+
             Category? alreadyexist = _context.Categories.FirstOrDefault(x => x.Name == newcat.Name);
             if (alreadyexist != null)
             {
