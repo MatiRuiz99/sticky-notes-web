@@ -37,12 +37,13 @@ function Main() {
 
   const addNewCategory = () => {
     if (visibleCount >= HARDCODED_CATEGORIES.length) return;
-    setCategories(prev => [...prev, HARDCODED_CATEGORIES[visibleCount]]);
+    setCategories((prev) => [...prev, HARDCODED_CATEGORIES[visibleCount]]);
   };
 
-  const { cols, rows } = useMemo(() => (
-    calculateGridLayout(visibleCount)
-  ), [visibleCount]);
+  const { cols, rows } = useMemo(
+    () => calculateGridLayout(visibleCount),
+    [visibleCount]
+  );
 
   return (
     <div className="app-container">
@@ -68,7 +69,8 @@ function Main() {
             onClick={addNewCategory}
             disabled={visibleCount >= HARDCODED_CATEGORIES.length}
           >
-            Show {Math.min(visibleCount + 1, HARDCODED_CATEGORIES.length)} Categories
+            Show {Math.min(visibleCount + 1, HARDCODED_CATEGORIES.length)}{" "}
+            Categories
           </button>
           <LoginRegister />
         </div>
